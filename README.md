@@ -1,4 +1,4 @@
-Page Monitor
+Page Update Monitor
 ==========
 
 A small module that monitor page update

@@ -1,5 +1,5 @@
 {
-  "name": "page-monitor",
+  "name": "page-update-monitor",
   "version": "1.0.0",
   "description": "monitor page update",
   "author": "shiwen-l",
@@ -36,5 +36,21 @@
     "transpile": "[ -d src ] && ./node_modules/.bin/babel src --out-dir lib || true",
     "pretest": "npm run transpile",
     "test": "mocha --ui bdd --compilers js:babel-core/register --require babel-polyfill --recursive --reporter spec --check-leaks -t 20000 test"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pplam/page_monitor.git"
+  },
+  "keywords": [
+    "monitor",
+    "update",
+    "web-page"
+  ],
+  "bugs": {
+    "url": "https://github.com/pplam/page_monitor/issues"
+  },
+  "homepage": "https://github.com/pplam/page_monitor#readme"
 }
