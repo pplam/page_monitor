@@ -5,7 +5,7 @@ A small module that monitor page update
 
 ## Installation
 
-  `npm install page-monitor`
+  `npm install page-update-monitor`
 
 ## Usage
 

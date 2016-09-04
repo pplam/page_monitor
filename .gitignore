@@ -4,3 +4,4 @@
 node_modules
 lib
 todo.md
+*.log
