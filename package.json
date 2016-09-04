@@ -4,7 +4,7 @@
   "description": "monitor page update",
   "author": "shiwen-l",
   "license": "MIT",
-  "main": "monitor.js",
+  "main": "lib/monitor.js",
   "dependencies": {
     "co-body": "^4.2.0",
     "koa": "^2.0.0",
