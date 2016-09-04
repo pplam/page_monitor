@@ -1,8 +1,10 @@
 {
-  "name": "page_monitor",
+  "name": "page-monitor",
   "version": "1.0.0",
   "description": "monitor page update",
   "author": "shiwen-l",
+  "license": "MIT",
+  "main": "monitor.js",
   "dependencies": {
     "co-body": "^4.2.0",
     "koa": "^2.0.0",
