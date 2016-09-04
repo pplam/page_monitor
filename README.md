@@ -9,7 +9,7 @@ A small module that monitor page update
 
 ## Usage
 
-  import Monitor from 'page-monitor'
+  `import Monitor from 'page-monitor'
 
   const monitor = new Monitor('http://www.example.com', { interval: 1000 })
 
@@ -23,7 +23,7 @@ A small module that monitor page update
 
   monitor.run()
 
-  monitor.stop()
+  monitor.stop()`
 
 ## Tests
 
