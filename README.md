@@ -9,21 +9,23 @@ A small module that monitor page update
 
 ## Usage
 
-  `import Monitor from 'page-update-monitor'`
+~~~
+  import Monitor from 'page-update-monitor'
 
-  `const monitor = new Monitor('http://www.example.com', { interval: 1000 })`
+  const monitor = new Monitor('http://www.example.com', { interval: 1000 })
 
-  `monitor.on('update', (previous, current) => {`
-  `  console.log(previous, current)`
-  `})`
+  monitor.on('update', (previous, current) => {
+    console.log(previous, current)
+  })
 
-  `monitor.on('noupdate', (current) => {`
-  `  console.log(current)`
-  `})`
+  monitor.on('noupdate', (current) => {
+    console.log(current)
+  })
 
-  `monitor.run()`
+  monitor.run()
 
-  `monitor.stop()`
+  monitor.stop()
+~~~
 
 ## Tests
 
@@ -31,4 +33,4 @@ A small module that monitor page update
 
 ## Contributing
 
-  Happy to gain any helpful contribution. Github: https://github.com/pplam/page_monitor.
+  Happy to gain any helpful contribution. Code in: https://github.com/pplam/page_monitor.
