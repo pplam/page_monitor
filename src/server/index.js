@@ -7,16 +7,11 @@ async function bodyParse(ctx, next) {
   await next()
 }
 
-class Server {
+export default class {
   constructor(config = {}) {
     this.port = config.port || 4000
-
     this.app = new Koa()
-
-    this.initRouter()
     this.app.use(bodyParse)
-
-
     this.initRouter()
   }
 
@@ -42,5 +37,3 @@ class Server {
     }
   }
 }
-
-export default Server

@@ -1,7 +1,7 @@
 Page Update Monitor
 ==========
 
-A small module that monitor page update
+Monitoring page updates for given url
 
 ## Installation
 
@@ -12,25 +12,25 @@ A small module that monitor page update
 ~~~javascript
   import Monitor from 'page-update-monitor'
 
-  const monitor = new Monitor('http://www.example.com', { interval: 1000 })
+  const url = 'https://news.ycombinator.com/'  // The target page to be monitored
+  const interval = 1000  // The interval(in ms) of the monitor instance to check the target page
+  const monitor = new Monitor(url, { interval })
 
+  // Emitted when page updates, with page's previous and current contents
   monitor.on('update', (previous, current) => {
     console.log(previous, current)
   })
 
+  // Emitted when page doesn't update, with page's current content
   monitor.on('noupdate', (current) => {
     console.log(current)
   })
 
-  monitor.run()
+  monitor.start()
 
   monitor.stop()
 ~~~
 
-## Tests
-
-  `npm test`
-
 ## Contributing
 
-  Happy to gain any helpful contribution. Code in: https://github.com/pplam/page_monitor.
+  Happy to get any helpful contribution. Here is the code, wish it's useful to you: https://github.com/pplam/page_monitor.

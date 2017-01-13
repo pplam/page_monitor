@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import Server from '../lib/server/app'
+import Server from '../lib/server'
 import Monitor from '../lib/monitor'
 
 const config = {
@@ -28,13 +28,13 @@ describe('Monitor', () => {
   it('should monitor page change', async () => {
     const url = `http://localhost:${config.port}/hello`
     const monitor = new Monitor(url, { interval: 1000 })
+
     let error = null
     try {
-      await monitor.run()
+      await monitor.start()
     } catch (e) {
       error = e
     }
-
     expect(error).to.equal(null)
 
     let updated = 0
@@ -47,8 +47,8 @@ describe('Monitor', () => {
       noupdated += 1
     })
 
-    await delay(4100)
-    expect(updated).to.equal(4)
+    await delay(5900)
+    expect(updated).to.equal(5)
     expect(noupdated).to.equal(0)
   })
 })

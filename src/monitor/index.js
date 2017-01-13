@@ -8,15 +8,11 @@ export default class Monitor extends EventEmitter {
     this.url = url
     this.interval = opts.interval || 2000
     this.current = null
-    this.stopped = false
+    this.active = false
   }
 
   async run() {
-    await this.monitor()
-  }
-
-  async monitor() {
-    if (!this.stopped) {
+    if (this.active) {
       const self = this
       setTimeout(async () => {
         const content = await self.fetchPage()
@@ -27,17 +23,18 @@ export default class Monitor extends EventEmitter {
           self.emit('noupdate', content)
         }
 
-        self.monitor()
+        await self.run()
       }, this.interval)
     }
   }
 
   async start() {
-    this.stopped = false
+    this.active = true
+    await this.run()
   }
 
   async stop() {
-    this.stopped = true
+    this.active = false
   }
 
   async fetchPage() {
