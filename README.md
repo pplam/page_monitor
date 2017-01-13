@@ -1,7 +1,7 @@
 Page Update Monitor
 ==========
 
-Monitoring page updates for given url
+Monitoring page updates for given url, no dependency
 
 ## Installation
 
@@ -10,11 +10,19 @@ Monitoring page updates for given url
 ## Usage
 
 ~~~javascript
-  import Monitor from 'page-update-monitor'
+import Monitor from 'page-update-monitor'
 
+const delay = (ms) => {
+  return new Promise(r => setTimeout(() => r(), ms))
+}
+
+(async () => {
   const url = 'https://news.ycombinator.com/'  // The target page to be monitored
   const interval = 1000  // The interval(in ms) of the monitor instance to check the target page
   const monitor = new Monitor(url, { interval })
+
+  // Remember to run it before set event handle
+  await monitor.start()
 
   // Emitted when page updates, with page's previous and current contents
   monitor.on('update', (previous, current) => {
@@ -26,9 +34,9 @@ Monitoring page updates for given url
     console.log(current)
   })
 
-  monitor.start()
-
-  monitor.stop()
+  await delay(5000)
+  await monitor.stop()
+})()
 ~~~
 
 ## Contributing
