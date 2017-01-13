@@ -1,6 +1,6 @@
 import { expect } from 'chai'
-import Server from '../lib/server'
-import Monitor from '../lib/monitor'
+import Server from './server'
+import Monitor from '../lib/'
 
 const config = {
   port: 4000,
