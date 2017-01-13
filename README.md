@@ -21,7 +21,7 @@ const delay = (ms) => {
   const interval = 1000  // The interval(in ms) of the monitor instance to check the target page
   const monitor = new Monitor(url, { interval })
 
-  // Remember to run it before set event handle
+  // Remember to run it before setting event handle
   await monitor.start()
 
   // Emitted when page updates, with page's previous and current contents
