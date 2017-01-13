@@ -4,7 +4,7 @@
   "description": "monitor page update",
   "author": "shiwen-l",
   "license": "MIT",
-  "main": "lib/monitor.js",
+  "main": "lib/monitor/index.js",
   "dependencies": {
     "co-body": "^4.2.0",
     "koa": "^2.0.0",
@@ -37,9 +37,6 @@
     "pretest": "npm run transpile",
     "test": "mocha --ui bdd --compilers js:babel-core/register --require babel-polyfill --recursive --reporter spec --check-leaks -t 20000 test"
   },
-  "directories": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pplam/page_monitor.git"
@@ -47,7 +44,9 @@
   "keywords": [
     "monitor",
     "update",
-    "web-page"
+    "page",
+    "content",
+    "html"
   ],
   "bugs": {
     "url": "https://github.com/pplam/page_monitor/issues"
